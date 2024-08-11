@@ -242,7 +242,7 @@
                                 </li>
                             </ul>
                         </nav>
-                        <button class="header__appointment">
+                        <button class="header__appointment open__popup">
                             записаться на прием
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -260,28 +260,6 @@
         </div>
 
     </header>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const button = document.getElementById('servicesButton');
-            const submenu = document.getElementById('subMenu');
-            const headerServicesBtn = document.querySelector('.header__services-btn');
-
-            button.addEventListener('click', function (event) {
-                event.stopPropagation();
-                submenu.classList.toggle('active');
-            });
-
-            document.addEventListener('click', function (event) {
-                if (!headerServicesBtn.contains(event.target)) {
-                    submenu.classList.remove('active');
-                }
-            });
-
-            submenu.addEventListener('click', function (event) {
-                event.stopPropagation();
-            });
-        });
-    </script>
     <div class="breadcrumbs">
         <div class="container">
             <ul>
@@ -318,7 +296,7 @@
                             от 115 000 ₽
                         </div>
                     </div>
-                    <button class="usluga-front__btn">
+                    <button class="usluga-front__btn open__popup">
                         посчитать мой случай
                     </button>
                     <img src="assets/images/usluga-front.png" alt="" class="usluga-front__top__bg">
@@ -618,26 +596,6 @@
             </div>
         </div>
     </section>
-    <script>
-        const works__swiper = new Swiper('.works__swiper', {
-            slidesPerView: 'auto',
-            loop: false,
-            spaceBetween: 16,
-
-            breakpoints: {
-                769: {
-                    slidesPerView: 2,
-                    loop: false,
-                    spaceBetween: 20,
-
-                    navigation: {
-                        nextEl: '.works__swiper__next',
-                        prevEl: '.works__swiper__prev',
-                    },
-                }
-            }
-        });
-    </script>
     <sectinon class="our-specialists">
         <div class="container">
             <div class="our-specialists__wrap">
@@ -749,7 +707,7 @@
                                             персональных данных</a></label>
                                 </div>
                             </div>
-                            <button>
+                            <button class="open__popup">
                                 Получить расчет
                             </button>
                         </form>
@@ -982,7 +940,7 @@
                             </svg>
                             primadenta@list.ru
                         </a>
-                        <button class="footer__feedback__btn">
+                        <button class="footer__feedback__btn open__popup">
                             записаться на прием
                         </button>
                     </div>
@@ -1013,6 +971,196 @@
             </div>
         </div>
     </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close">
+                <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18.1016" y1="17.4135" x2="53.5855" y2="52.8974" stroke="white" stroke-width="2" />
+                    <line x1="18.746" y1="52.383" x2="53.2014" y2="17.9276" stroke="white" stroke-width="2" />
+                </svg>
+            </button>
+            <div class="popup__wrap">
+                <div class="popup__left">
+                    <div class="popup__title">
+                        <h2>
+                            Запишитесь
+                            на консультацию или приём
+                        </h2>
+                    </div>
+                    <div class="popup__descr">
+                        Мы свяжемся с вами в течение 5 минут для уточнения деталей и консультации
+                    </div>
+                </div>
+                <div class="popup__right">
+                    <form action="">
+                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Телефон">
+                        <div class="checkbox">
+                            <input class="custom-checkbox" type="checkbox" id="privacy3" name="privacy3"
+                                value="privacy3">
+                            <label for="privacy3">Нажимая на кнопку, вы соглашаетесь с <a href="">правилами обработки
+                                    персональных данных</a></label>
+                        </div>
+                        <button>
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile__menu">
+        <div class="mobile__menu__wrap">
+            <div class="mobile__menu__header">
+                <a href="" class="mobile__menu__logo">
+                    <img src="assets/images/footer_logo.svg" alt="">
+                </a>
+                <button class="mobile__menu__loop">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 19L14.5564 14.5564M16.8824 8.94118C16.8824 4.55538 13.3269 1 8.94118 1C4.55538 1 1 4.55538 1 8.94118C1 13.3269 4.55538 16.8824 8.94118 16.8824C13.3269 16.8824 16.8824 13.3269 16.8824 8.94118Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="mobile__menu__close">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 17.5562L17.5563 1.9998" stroke="#E2EBFF" stroke-width="1.5" stroke-linecap="square"
+                            stroke-linejoin="round" />
+                        <path d="M17.5562 17.5562L1.9998 1.9998" stroke="#E2EBFF" stroke-width="1.5"
+                            stroke-linecap="square" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile__menu__main">
+                <div class="mobile__menu__uslugi">
+                    <button class="open__uslugi">
+                        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line y1="1" x2="20" y2="1" stroke="#5A81FA" stroke-width="2" />
+                            <line y1="7" x2="13" y2="7" stroke="#5A81FA" stroke-width="2" />
+                            <line y1="13" x2="20" y2="13" stroke="#5A81FA" stroke-width="2" />
+                        </svg>
+                        услуги
+                    </button>
+                    <div class="mobile__menu__uslugi__content">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Консультация
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Имплантация
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Установка брекетов
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Элайнеры
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Виниры
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Коронки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    3Д снимок
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    ОПТГ <br>
+                                    (ортопантомограмма)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Аппарат Марко Росса
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Протезирование
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Терапия
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Хирургия
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Детская стоматология
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">
+                                О нас
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                специалисты
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                прайс
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                ОТЗЫВЫ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile__menu__footer">
+                    <div class="mobile__menu__vk">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24.235 16.1749C23.7823 15.6149 23.9118 15.3657 24.235 14.8651C24.2408 14.8594 27.9778 9.80114 28.3628 8.08571L28.3651 8.08457C28.5565 7.45943 28.3651 7 27.4399 7H24.3785C23.5991 7 23.2398 7.39429 23.0473 7.83543C23.0473 7.83543 21.4885 11.4903 19.2835 13.8594C18.5718 14.544 18.2428 14.7634 17.8542 14.7634C17.6629 14.7634 17.3654 14.544 17.3654 13.9189V8.08457C17.3654 7.33486 17.1472 7 16.502 7H11.6882C11.1994 7 10.9088 7.34971 10.9088 7.67543C10.9088 8.38629 12.0114 8.54971 12.1257 10.5497V14.8891C12.1257 15.84 11.9495 16.0149 11.5587 16.0149C10.518 16.0149 7.99208 12.3451 6.49519 8.14514C6.19301 7.33029 5.89784 7.00114 5.11264 7.00114H2.05004C1.17617 7.00114 1 7.39543 1 7.83657C1 8.616 2.0407 12.4914 5.8395 17.6114C8.37125 21.1063 11.9367 23 15.1802 23C17.1297 23 17.3677 22.5794 17.3677 21.856C17.3677 18.5166 17.1916 18.2011 18.1681 18.2011C18.6208 18.2011 19.4001 18.4206 21.2202 20.1063C23.3004 22.1051 23.6423 23 24.8067 23H27.8681C28.7408 23 29.183 22.5794 28.9286 21.7497C28.3464 20.0046 24.4123 16.4149 24.235 16.1749Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <button class="mobile__menu__btn">
+                        записаться на прием
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/gsap.js"></script>
+    <script src="assets/js/gsap-about.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

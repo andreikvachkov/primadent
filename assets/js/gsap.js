@@ -93,8 +93,8 @@ window.addEventListener('load', function () {
         },
     });
     gsap.to(".services__bg9", {
-        yPercent: 300,
-        scale: 2.7,
+        yPercent: 200,
+        scale: 1.2,
         ease: "none",
         scrollTrigger: {
             trigger: ".services",

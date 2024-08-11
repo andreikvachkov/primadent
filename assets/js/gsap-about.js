@@ -29,18 +29,44 @@ window.addEventListener('load', function () {
             pin: true,
         }
     });
-    
+
     gsap.set(items2[0], { y: 0 });
-    
+
     items2.slice(1).forEach((item, index) => {
         tl2.fromTo(item,
-            { y: '200%' }, 
-            { y: 0, ease: "none" }, 
+            { y: '200%' },
+            { y: 0, ease: "none" },
             index * 0.5
         );
     });
 
+    gsap.registerPlugin(ScrollTrigger);
 
+    function animateNumbers() {
+        document.querySelectorAll('.about-advantages__number').forEach(numberElem => {
+            const endValue = parseInt(numberElem.textContent.replace(/\s/g, ''), 10);
 
+            gsap.fromTo(numberElem, 
+                {
+                    innerHTML: 0
+                }, 
+                {
+                    innerHTML: endValue,
+                    duration: 1.5,
+                    ease: "power1.out",
+                    snap: { innerHTML: 1 },
+                    onUpdate: function() {
+                        numberElem.innerHTML = Math.round(numberElem.innerHTML);
+                    },
+                    scrollTrigger: {
+                        trigger: numberElem,
+                        start: "top 80%",
+                        once: true
+                    }
+                }
+            );
+        });
+    }
 
+    animateNumbers();
 });
